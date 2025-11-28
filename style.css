@@ -1,0 +1,192 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* body */
+body {
+    line-height: 1.6;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* dark mode */
+body.dark-mode {
+    background-color: #111827;
+    color: #f3f4f6;
+}
+
+/* header */
+header {
+    background-color: #1f2937;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* navigation links */
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fbbf24;
+    text-decoration: underline;
+}
+
+/* logo text */
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* dark mode button */
+#modeToggle {
+    margin-left: auto;
+    background: #fbbf24;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* hero section */
+#hero {
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(rgba(31,41,55,0.7), rgba(31,41,55,0.7)),
+    url('https://source.unsplash.com/1600x900/?technology') center/cover no-repeat;
+    text-align: center;
+}
+
+/* sections */
+section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
+    background-color: white;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+
+body.dark-mode section {
+    background-color: #1f2937;
+}
+
+/* section headings */
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* project grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* project card */
+.project-card {
+    padding: 25px;
+    background-color: rgb(11, 11, 11);
+    border-radius: 15px;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    font-color: black;
+
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    background-color: #1b20ab55;
+}
+
+/* form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    padding: 15px;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* footer */
+footer {
+    background: #1f2937;
+    color: #ccc;
+    padding: 25px;
+    text-align: center;
+}
+
+/* responsive menu */
+@media (max-width: 768px) {
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        height: 100vh;
+        width: 250px;
+        justify-content: center;
+        background: #111827;
+        transition: 0.3s;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
